@@ -40,7 +40,7 @@ function handleSymbol(value) {
         buffer = "" +runningTotal;
         runningTotal = 0;
         break;
-        case 'Back' :
+        case '⬅' :
             if (buffer.length === 1) {
                 buffer = '0';
             } else {
@@ -65,9 +65,9 @@ function handleMath(value) {
 }
 
 function flushOperation(intBuffer) {
-    if (previousOperator === "+") {
-        runningTotal += intBuffer;
-    } else if (previousOperator === "-") {
+    if (previousOperator === "➕") {
+        runningTotal = intBuffer;
+    } else if (previousOperator === "➖") {
         runningTotal -= intBuffer;
     } else if (previousOperator === "x") {
         runningTotal *= intBuffer;
